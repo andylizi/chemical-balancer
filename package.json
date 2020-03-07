@@ -1,0 +1,29 @@
+{
+  "name": "chemical-balancer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build:dev": "vue-cli-service build --mode=development"
+  },
+  "dependencies": {
+    "element-ui": "^2.13.0",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.2",
+    "vue-property-decorator": "^8.3.0"
+  },
+  "devDependencies": {
+    "@types/webpack-chain": "^5.2.0",
+    "@vue/cli-plugin-babel": "^4.2.3",
+    "@vue/cli-plugin-typescript": "^4.2.0",
+    "@vue/cli-service": "^4.2.0",
+    "babel-plugin-component": "^1.1.1",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
+    "typescript": "^3.8.3",
+    "vue-cli-plugin-element": "^1.0.1",
+    "vue-template-compiler": "^2.6.11",
+    "webpack-cdn-plugin": "^3.2.2"
+  }
+}

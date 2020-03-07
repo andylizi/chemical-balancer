@@ -1,0 +1,10 @@
+{
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "vetur.format.options.tabSize": 4,
+    "vetur.format.defaultFormatter.html": "prettier",
+    "prettier.tabWidth": 4,
+    "prettier.printWidth": 600,
+    "prettier.singleQuote": true,
+    "prettier.jsxBracketSameLine": true
+}
