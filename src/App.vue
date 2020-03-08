@@ -1,27 +1,26 @@
 <template>
     <div id="app">
-        <div>
-            <p>
-                If Element is successfully added to this project, you'll see an
-                <code v-text="'<el-button>'"></code>
-                below
-            </p>
-            <el-button>el-button</el-button>
+        <div v-for="(equation, idx) in equations" :key="idx">
+            <EquationView :equation="equation" />
         </div>
-
-        <HelloWorld msg="Welcome to Your Vue.js App" />
     </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue';
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import EquationView from './components/chemistry/EquationView.vue';
+import { Equation } from './engine/chemistry';
 
-export default {
-    name: 'app',
+@Component({
+    name: 'App',
     components: {
-        HelloWorld
+        EquationView
     }
-};
+})
+export default class App extends Vue {
+    @Prop({ required: true })
+    private equations!: Array<Equation>;
+}
 </script>
 
 <style>

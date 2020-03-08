@@ -18,7 +18,7 @@ module.exports = {
                 prodUrl: "https://cdn.jsdelivr.net/npm/:name@:version/:path",
                 publicPath: '',
                 modules: [
-                    { name: 'vue', var: 'Vue', path: 'dist/vue.runtime.min.js' }
+                    { name: 'vue', var: 'Vue', path: 'dist/vue.runtime.js' }
                 ]
             }]);
 
