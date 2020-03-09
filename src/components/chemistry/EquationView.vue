@@ -49,6 +49,7 @@ export default Vue.extend({
 
 <style lang="scss">
 .chem-equation {
-    font-family: 'Consolas';
+    font-family: 'Cambria Math', Consolas;
+    font-weight: 600;
 }
 </style>

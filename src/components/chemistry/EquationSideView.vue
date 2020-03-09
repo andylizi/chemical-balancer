@@ -2,7 +2,7 @@
     <span :class="`chem-equation-${side}`">
         <template v-for="(term, idx) in terms">
             <span class="chem-equation-plus" v-if="idx != 0" :key="idx"> + </span>
-            <GroupView :key="term.uid" :model="term" :coef="coefs[idx]"/>
+            <GroupView :key="term.uid" :model="term" :coef="coefs ? coefs[idx] : undefined"/>
         </template>
     </span>
 </template>
