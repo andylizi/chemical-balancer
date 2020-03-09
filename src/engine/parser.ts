@@ -125,11 +125,11 @@ export class Parser {
         };
 
         for (token of this.lexer) {
-            console.log({
-                type: token.type,
-                value: token.value,
-                state: this.lexer.save().state
-            });
+            // console.log({
+            //     type: token.type,
+            //     value: token.value,
+            //     state: this.lexer.save().state
+            // });
 
             switch (token.type) {
                 case Type.SYMBOL: {

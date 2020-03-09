@@ -1,7 +1,7 @@
-import { Identifiable, Stringifiable, Countable, generateUid } from './chemistry';
+import { ChemistryStructure, Countable, generateUid } from './chemistry';
 import { Component } from './Component';
 
-export interface Group extends Identifiable, Stringifiable, Countable {
+export interface Group extends ChemistryStructure, Countable {
     readonly type: 'group',
     readonly components: Array<Component | Group>;
 }
@@ -25,7 +25,11 @@ class GroupImpl implements Group {
     }
 
     toString() {
-        return `(${this.components.join('')})${this.count}`;
+        if (this.count > 1) {
+            return `(${this.components.join('')})${this.count}`;
+        } else {
+            return `(${this.components.join('')})`;
+        }
     }
 }
 

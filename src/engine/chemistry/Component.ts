@@ -1,6 +1,6 @@
-import { ElementSymbol, Identifiable, Stringifiable, Countable, generateUid } from './chemistry';
+import { ElementSymbol, ChemistryStructure, Countable, generateUid } from './chemistry';
 
-export interface Component extends Identifiable, Stringifiable, Countable {
+export interface Component extends ChemistryStructure, Countable {
     readonly type: 'component',
     symbol: ElementSymbol
 }
@@ -24,7 +24,11 @@ class ComponentImpl implements Component {
     }
 
     toString() {
-        return this.symbol + this.count;
+        if (this.count > 1) {
+            return this.symbol + this.count;
+        } else {
+            return this.symbol;
+        }
     }
 }
 

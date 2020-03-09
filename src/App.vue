@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div v-for="(equation, idx) in equations" :key="idx">
-            <EquationView :equation="equation" />
+            <EquationView :equation="equation" :coefs="coefs[idx]" />
         </div>
     </div>
 </template>
@@ -19,7 +19,9 @@ import { Equation } from './engine/chemistry';
 })
 export default class App extends Vue {
     @Prop({ required: true })
-    private equations!: Array<Equation>;
+    private equations!: Equation[];
+    @Prop()
+    private coefs!: number[][];
 }
 </script>
 

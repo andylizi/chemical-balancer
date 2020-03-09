@@ -4,6 +4,21 @@ export function isNull(x: any | null): x is null {
 
 export { isFalsy } from 'utility-types';
 
+/**
+ * 求最大公因数 (辗转相除法).
+ */
+export function gcd(a: number, b: number): number {
+    a = Math.abs(a), b = Math.abs(b);
+
+    let t;
+    while (b !== 0) {
+        t = a % b;
+        a = b;
+        b = t;
+    }
+    return a;
+}
+
 export class Stack<T> {
     private _array: Array<T> = [];
 

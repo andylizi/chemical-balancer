@@ -1,8 +1,8 @@
-import { Identifiable, Stringifiable, generateUid } from './chemistry';
+import { ChemistryStructure, generateUid } from './chemistry';
 import { Component } from './Component';
 import { Group } from './Group';
 
-export interface Term extends Identifiable, Stringifiable {
+export interface Term extends ChemistryStructure {
     readonly type: 'term',
     readonly components: Array<Component | Group>;
 }

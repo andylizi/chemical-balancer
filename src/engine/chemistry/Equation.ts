@@ -1,7 +1,7 @@
-import { Identifiable, Stringifiable, generateUid } from './chemistry';
+import { ChemistryStructure, Stringifiable, generateUid } from './chemistry';
 import { Term } from './Term';
 
-export interface Equation extends Identifiable, Stringifiable {
+export interface Equation extends ChemistryStructure {
     readonly type: 'equation',
     readonly leftSide: Array<Term>;
     readonly rightSide: Array<Term>;
