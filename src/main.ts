@@ -17,6 +17,7 @@ const eqs: Equation[] = [];
 const coefs: number[][] = [];
 for (const formular of formulars) {
     const eq = new Parser(formular).parse();
+    console.log(eq.toString());
     eqs.push(eq);
     coefs.push(balance(eq));
 }

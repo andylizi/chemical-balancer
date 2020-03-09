@@ -7,22 +7,25 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import Vue from 'vue';
 import EquationView from './components/chemistry/EquationView.vue';
 import { Equation } from './engine/chemistry';
 
-@Component({
+export default Vue.extend({
     name: 'App',
     components: {
         EquationView
+    },
+    props: {
+        equations: {
+            type: Array as () => Equation[],
+            required: true
+        },
+        coefs: {
+            type: Array as () => number[][]
+        }
     }
-})
-export default class App extends Vue {
-    @Prop({ required: true })
-    private equations!: Equation[];
-    @Prop()
-    private coefs!: number[][];
-}
+});
 </script>
 
 <style>

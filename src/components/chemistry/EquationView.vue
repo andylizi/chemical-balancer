@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Watch, Vue } from 'vue-property-decorator';
+import Vue from 'vue';
 import EquationSideView from './EquationSideView.vue';
 import { Equation } from '@/engine/chemistry';
 
@@ -29,11 +29,10 @@ export default Vue.extend({
         coefs: {
             immediate: true,
             handler(coefs) {
-                if (coefs) {
-                    const {leftSide: lhs, rightSide: rhs} = this.equation;
-                    if (this.coefs.length !== (lhs.length + rhs.length))
-                        throw new Error('Invalid equation coefficients');
-                }
+                if (!coefs) return;
+                const {leftSide: lhs, rightSide: rhs} = this.equation;
+                if (coefs.length !== (lhs.length + rhs.length))
+                    throw new Error('Invalid equation coefficients');
             }
         }
     },
@@ -49,7 +48,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-    .chem-equation {
-        font-family: 'Consolas';
-    }
+.chem-equation {
+    font-family: 'Consolas';
+}
 </style>

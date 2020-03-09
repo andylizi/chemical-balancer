@@ -1,20 +1,23 @@
 <template>
     <span class="chem-component">
-        <span class="chem-element-symbol">{{ component.symbol }}</span>
-        <sub v-if="component.count > 1">{{ component.count }}</sub>
+        <span class="chem-element-symbol">{{ model.symbol }}</span>
+        <sub v-if="model.count > 1">{{ model.count }}</sub>
     </span>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import Vue from 'vue';
 import { Component as ChemComponent } from '@/engine/chemistry';
 
-@Component({
-    name: 'ComponentView'
-})
-export default class ComponentView extends Vue {
-    @Prop({ required: true }) component!: ChemComponent;
-}
+export default Vue.extend({
+    name: 'ComponentView',
+    props: {
+        model: {
+            type: Object as () => ChemComponent,
+            required: true
+        }
+    }
+});
 </script>
 
 <style lang="scss">
