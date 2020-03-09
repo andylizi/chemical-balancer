@@ -23,7 +23,7 @@ enum Type {
 
 const matchers = {
     symbol: /[A-Z][a-z]*/,
-    count: /[2-9]|[1-9][0-9]+/,
+    count: /[1-9][0-9]+|[2-9]/,
     group_start: ['(', '['],
     group_end: [')', ']'],
     space: /\s+/,
